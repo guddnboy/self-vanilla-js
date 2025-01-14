@@ -10,6 +10,7 @@ export default function App($app){
 
     const tabBar = new TabBar({$app, initialState:'',
         onClick : async(name) => {
+            history.pushState(null, `${name}`, name);
             this.setState({
                 ...this.state,
                 currentTab: name,
