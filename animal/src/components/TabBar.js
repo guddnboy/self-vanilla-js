@@ -1,5 +1,5 @@
-export default function TabBar({$app, initialState, onClick}) {
-    this.state = initialState;
+export default function TabBar ({$app, initialState, onClick}){
+    this.state =initialState;
     this.onClick = onClick;
 
     this.$target = document.createElement('div');
@@ -7,9 +7,9 @@ export default function TabBar({$app, initialState, onClick}) {
     $app.appendChild(this.$target);
 
     this.template = () => {
-        let temp = `<div id="all">전체</div><div id="penguin">펭귄</div><div id="koala">코알라</div><div id="panda">판다</div>`;
-        return temp;
-    }
+        let tmp =`<div id="all">전체</div><div id="panda">판다</div><div id="koala">코알라</div><div id="penguin">펭귄</div>`;
+        return tmp;
+    };
 
     this.render = () => {
         this.$target.innerHTML = this.template();
@@ -18,12 +18,12 @@ export default function TabBar({$app, initialState, onClick}) {
         $currentTab && ($currentTab.className = 'clicked');
 
         const tabBar = this.$target.querySelectorAll('div');
-        tabBar.forEach(elem => {
-            elem.addEventListener('click', ()=>{
-                onClick(elem.id);
+        tabBar.forEach(element => {
+            element.addEventListener('click', ()=>{
+                onClick(element.id);
             });
-        })
-    }; 
+        });
+    };
 
     this.setState = (newState) => {
         this.state = newState;
