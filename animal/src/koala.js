@@ -4,8 +4,8 @@ const $content = document.querySelector('div.content');
 let template = [];
 
 //API
-const getData = async () => {
-    let res = await fetch(API_URL);
+const getData = async (name) => {
+    let res = await fetch(`${API_URL}${name}`);
     try {
         if (res) {
             let data = await res.json();
@@ -19,4 +19,4 @@ const getData = async () => {
     }
 };
 
-getData();
+getData('koala');
