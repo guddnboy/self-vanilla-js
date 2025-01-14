@@ -1,8 +1,8 @@
-import Content from './components/content.js';
-import TabBar from './components/tabBar.js';
+import Content from './components/Content.js';
+import TabBar from './components/TabBar.js';
 import {request} from './components/api.js';
 
-export default function App({$app}){
+export default function App($app){
     this.state = {
         currentTab : 'all',
         photos : []

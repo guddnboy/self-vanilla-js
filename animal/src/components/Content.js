@@ -1,7 +1,7 @@
 export default function Content({$app, initialState}) {
     this.state = initialState;
     this.$target = document.createElement('div');
-    this.$target.claaName = 'content';
+    this.$target.className = 'content';
 
     $app.appendChild(this.$target);
 

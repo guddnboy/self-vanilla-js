@@ -17,7 +17,7 @@ export default function TabBar ({$app, initialState, onClick}){
         let $currentTab = document.getElementById(this.state);
         $currentTab && ($currentTab.className = 'clicked');
 
-        const tabBar = document.querySelectorAll('div');
+        const tabBar = this.$target.querySelectorAll('div');
         tabBar.forEach(element => {
             element.addEventListener('click', ()=>{
                 onClick(element.id);
@@ -26,7 +26,7 @@ export default function TabBar ({$app, initialState, onClick}){
     };
 
     this.setState = (newState) => {
-        this.state = newState,
+        this.state = newState;
         this.render();
     };
 
