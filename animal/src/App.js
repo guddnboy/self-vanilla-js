@@ -8,7 +8,15 @@ export default function App($app){
         photos : []
     }
 
-    const tabBar = new TabBar({$app, initialState:''});
+    const tabBar = new TabBar({$app, initialState:'',
+        onClick : async(name) => {
+            this.setState({
+                ...this.state,
+                currentTab: name,
+                photos: await request(name=== 'all' ? '' : name),
+            });
+        }
+    });
     const content = new Content({$app, initialState:[]});
 
     this.setState =(newState) =>{
