@@ -1,6 +1,6 @@
-import Content from './components/content';
-import TabBar from './components/tabBar';
-import {request} from './components/api';
+import Content from './components/content.js';
+import TabBar from './components/tabBar.js';
+import {request} from './components/api.js';
 
 export default function App({$app}){
     this.state = {
